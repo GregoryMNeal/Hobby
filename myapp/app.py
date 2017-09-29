@@ -1,5 +1,8 @@
+import os
 import tornado.ioloop
 import tornado.web
+
+PORT = int(os.environ.get('PORT', '8888'))
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
@@ -11,6 +14,8 @@ def make_app():
     ])
 
 if __name__ == "__main__":
+
     app = make_app()
-    app.listen(8888,print("Server started on localhost: 8888"))
+
+    app.listen(PORT, print("Server started on localhost: " + str(PORT)))
     tornado.ioloop.IOLoop.current().start()
