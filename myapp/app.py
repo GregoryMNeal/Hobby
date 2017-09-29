@@ -17,5 +17,5 @@ if __name__ == "__main__":
 
     app = make_app()
 
-    app.listen(PORT, print("Server started on localhost: " + str(PORT)))
+    app.listen(PORT)
     tornado.ioloop.IOLoop.current().start()
